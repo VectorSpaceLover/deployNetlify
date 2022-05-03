@@ -9,7 +9,7 @@ export default function Routers() {
     <Router>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Appraisal />} />
         <Route path="/appraisal" element={<Appraisal />} />
       </Routes>
     </Router>

@@ -30,12 +30,7 @@ export default function Appraisal() {
         <div className="progress-steper">
           {steps.map((step, idx) => {
             const txtParagrap = cStep === idx ? <strong>{`${idx + 1}. ${step.name}`}</strong> : <span>{`${idx + 1}. ${step.name}`}</span>;
-            if (idx === steps.length - 1)
-              return (
-                <li onClick={() => setCStep(idx)} key={idx}>
-                  {txtParagrap}
-                </li>
-              );
+            if (idx === steps.length - 1) return <li key={idx}>{txtParagrap}</li>;
             else
               return (
                 <li onClick={() => setCStep(idx)} key={idx}>
