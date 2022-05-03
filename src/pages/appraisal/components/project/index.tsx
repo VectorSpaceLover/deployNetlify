@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as RadioNormal } from "../../../../assets/svg/normal-radio.svg";
+import { ReactComponent as RadioSelected } from "../../../../assets/svg/selected-radio.svg";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { Styles } from "./style";
@@ -15,7 +16,7 @@ const Project: React.FC<Props> = ({ handleNext }) => {
   const [isRequiredCode, setRequiredCode] = useState<boolean>(false);
 
   const checkValid = () => {
-    if (selected > 0) {
+    if (selected > -1) {
       setRequiredCode(false);
       handleNext(2);
     } else setRequiredCode(true);
@@ -31,7 +32,7 @@ const Project: React.FC<Props> = ({ handleNext }) => {
               return (
                 <Grid item xs={12} key={idx} className={`animation-${idx + 1}`}>
                   <Button className={selected === idx ? "radio-btn clicked" : "radio-btn"} onClick={() => setSelected(idx)}>
-                    {selected === idx ? <RadioNormal /> : <RadioNormal />}
+                    {selected === idx ? <RadioSelected /> : <RadioNormal />}
                     <span>{period.date}</span>
                   </Button>
                 </Grid>

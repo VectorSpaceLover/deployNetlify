@@ -19,15 +19,15 @@ const Search: React.FC<Props> = ({ handleNext }) => {
   const [isRequiredPeriod, setRequiredPeriod] = useState<boolean>(false);
 
   const checkValid = () => {
-    if (selectedPro > 0) {
+    if (selectedPro > -1) {
       setRequiredPro(false);
     } else setRequiredPro(true);
 
-    if (selectedPeriod > 0) {
+    if (selectedPeriod > -1) {
       setRequiredPeriod(false);
     } else setRequiredPeriod(true);
 
-    if (selectedPro > 0 && selectedPeriod > 0) handleNext(3);
+    if (selectedPro > -1 && selectedPeriod > -1) handleNext(3);
   };
 
   return (

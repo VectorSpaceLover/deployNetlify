@@ -33,7 +33,7 @@ export default function Appraisal() {
             if (idx === steps.length - 1) return <li key={idx}>{txtParagrap}</li>;
             else
               return (
-                <li onClick={() => setCStep(idx)} key={idx}>
+                <li>
                   {txtParagrap}
                   {cStep === idx ? <RightBlack /> : <RightGray />}
                 </li>
